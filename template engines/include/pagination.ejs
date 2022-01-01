@@ -1,0 +1,27 @@
+<section>
+    <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-center">
+            <% if(page!==1) {%>
+                <li class="page-item">
+                    <a class="page-link" href="?page=<%= prevpage %>">Previous</a>
+                <li class="page-item"><a class="page-link" href="?page=1">1</a></li>
+                </li>
+                <%}%>
+                    <li class="page-item active"><a class="page-link " href="?page=<%= page%>">
+                            <%= page%>
+                        </a></li>
+                    <% if(hasnext) {%>
+                        <li class="page-item">
+                            <a class="page-link" href="?page=<%= nextpage%>">
+                                <%= nextpage %>
+                            </a>
+                        </li>
+                        <%}%>
+                            <% if(hasnextbtn) {%>
+                                <li class="page-item">
+                                    <a class="page-link" href="?page=<%= nextpagebtn %>">Next</a>
+                                </li>
+                                <%}%>
+        </ul>
+    </nav>
+</section>

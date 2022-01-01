@@ -1,0 +1,46 @@
+.container1{
+    display: grid;
+    grid-template-columns: repeat(2,auto);
+    /* margin-left: 10rem;
+    width: 100%; */
+}
+.btn{
+    background-color: rgb(20, 101, 223);
+    color: whitesmoke;
+    margin-left: 3rem;
+    padding:0.5rem;
+    border-radius: 0.3rem;
+    border: 2px solid rgb(199, 174, 31);
+    padding: 0.5rem 1.9rem;
+    font-size: 1rem;
+    margin-bottom: 2rem;
+}
+.card1{
+    margin-left: 7rem;
+    margin-bottom: 5rem;
+    border: 2px solid tomato;
+    width: 64%;
+    background-color: gainsboro;
+    text-align: center;
+}
+.card1 img{
+    width:100%;
+}
+.btncont{
+    display:flex;
+    margin-left: 5rem;
+     /* margin-bottom: 1rem; }*/
+}
+.btncont a{
+    text-decoration: none;
+    padding: 0.4rem;
+    padding: 0.5rem 1.9rem;
+    font-size: 1rem;
+}
+.title{
+    text-align: center;
+    
+} 
+.price{
+    font-size: 1rem;
+} 

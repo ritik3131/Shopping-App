@@ -1,0 +1,51 @@
+
+      <%- include('../include/head.ejs')%>
+      <style>
+        .callout{
+          height: 20%;
+          border:2px solid gainsboro;
+          border-left:6px solid  rgb(2, 155, 216);
+          width: 80%;
+        }
+        li{
+          list-style: none;
+        }
+      </style>
+    </head>
+  
+    <body>
+      <%- include('../include/navigate.ejs')%>
+        <main>
+          <% if(prods.length>0) {%>
+            <ul>
+              <% prods.forEach(p=> { %>
+                <li>
+                  <!-- <div class="callout my-4 container p-3 d-flex"> -->
+                    <div class="row callout my-4 container p-3 mx-4">
+                      <div class="col-xs-9">
+                    <b class="ml-4"> <%= p.productId.title %> </b>(Quantity: <%= p.qty %>)</div>
+                    <div class="col-xs-3">
+                  <form action="/delete-cart-item" class="delete-product" method="POST">
+                    <input type="hidden" value="<%= p._id%>" name="productid">
+                    <input type="hidden" name="_csrf" value="<%= csrfToken%>">
+                    <button type="submit" class="btn btn-outline-danger float-end" style="text-align:right">Delete</button>
+                  </form>
+                </div>
+                  </div>
+                </li>
+                <% }) %>
+            </ul>
+            <hr>
+            <!-- <form action="/order-item" class="delete-product" style="text-align: center;" method="POST">
+              <input type="hidden"  name="productid">
+              <input type="hidden" name="_csrf" value="<%= csrfToken%>">
+              <button type="submit" class="btn btn-outline-info">Order Now</button>
+            </form> -->
+            <div class="text-center">
+            <a href="/checkout" class="btn btn-outline-info">Order Now</a>
+          </div>
+            <%}else {%>
+              <h1 style="text-align: center;" class="mx-auto my-4">No Products in cart!</h1>
+              <%}%>
+        </main>
+        <%- include('../include/end.ejs')%>

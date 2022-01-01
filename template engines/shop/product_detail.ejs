@@ -1,0 +1,22 @@
+<%- include('../include/head.ejs')%>
+    </head>
+
+    <body>
+        <%- include('../include/navigate.ejs')%>
+            <div class="container">
+                <h1 class="text-center">
+                    <%= product.title%>
+                </h1>
+                <hr>
+                <img src="/<%= product.ImageUrl%>" style=" width:30% " alt="" class="rounded mx-auto d-block">
+                <h2  class="text-center">
+                    <%= product.Price%>
+                </h2>
+                <p class="text-center">
+                    <%= product.Description%>
+                </p>
+                <div class="text-center ">
+                <%- include('../include/add-to-cart.ejs')%>
+            </div>
+        </div>
+            <%- include('../include/end.ejs')%>

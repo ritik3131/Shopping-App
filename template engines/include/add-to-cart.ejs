@@ -1,0 +1,15 @@
+<!-- <%if(isAuthenticated) {%>
+<form action="/cart" class="add-to-cart" method="POST">
+  <input type="hidden" name="_csrf" value="<%= csrfToken%>" />
+  <button type="submit" class="btn">Add to Cart</button>
+  <input type="hidden" name="productids" value="<%= product._id%>" />
+</form>
+<%}%> -->
+<%if(isAuthenticated) {%>
+  <form action="/cart" class="add-to-cart" method="POST">
+    <input type="hidden" name="_csrf" value="<%= csrfToken%>" />
+    <button type="submit" class="btn btn-outline-success">Add to Cart</button>
+    <input type="hidden" name="productids" value="<%= product._id%>" />
+  </form>
+  <%}%>
+  

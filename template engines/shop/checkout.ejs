@@ -1,0 +1,61 @@
+
+      <%- include('../include/head.ejs')%>
+      <style>
+        .callout{
+          height: 20%;
+          border:2px solid gainsboro;
+          border-left:6px solid  rgb(2, 155, 216);
+          width: 80%;
+        }
+        li{
+          list-style: none;
+        }
+      </style>
+    </head>
+  
+    <body>
+      <%- include('../include/navigate.ejs')%>
+        <main>
+          <% if(prods.length>0) {%>
+            <ul>
+              <% prods.forEach(p=> { %>
+                <li>
+                  <!-- <div class="callout my-4 container p-3 d-flex"> -->
+                    <div class="row callout my-4 container p-3 mx-4">
+                      <div class="col-xs-9">
+                    <b class="ml-4"> <%= p.productId.title %> </b>(Quantity: <%= p.qty %>)</div>
+                    <div class="col-xs-3">
+                </div>
+                  </div>
+                </li>
+                <% }) %>
+            </ul>
+            <div class="text-center">
+                <h2>Total Price: <%= totalprice%></h2>
+            </div>
+            <div class="text-center">
+              <button id="order-btn" class="btn btn-outline-info">
+                Order Now
+              </button>
+              <script src="https://js.stripe.com/v3/"></script>
+              <script>
+                let stripe=Stripe('pk_test_51JMvPPSAUEuUq9k6Xjzc9ZRDCF7SVrQLPpQD9AjoFrOZZ9bKmjoFKJ48yVkJ17wIN9mGqkTHqbRBmmXTOli6NXQj00vjMCBjpS');
+              let order=document.getElementById('order-btn');
+              order.addEventListener('click',function(){
+                stripe.redirectToCheckout({
+                  sessionId:'<%= sessionId%>'
+                });
+              })
+              </script>
+            </div>
+            <hr>
+            <!-- <form action="/order-item" class="delete-product" style="text-align: center;" method="POST">
+              <input type="hidden"  name="productid">
+              <input type="hidden" name="_csrf" value="<%= csrfToken%>">
+              <button type="submit" class="btn btn-outline-info">Order Now</button>
+            </form> -->
+            <%}else {%>
+              <h1 style="text-align: center;" class="mx-auto my-4">No Products in cart!</h1>
+              <%}%>
+        </main>
+        <%- include('../include/end.ejs')%>

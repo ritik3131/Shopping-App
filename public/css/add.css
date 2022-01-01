@@ -1,0 +1,23 @@
+ .addprouct2{
+    margin: 5rem 0rem 0rem 27rem;
+  }
+    .addprouct{
+    padding:0.5rem;
+    border-radius: 1rem;
+    background-color: turquoise;
+    color: white;
+    font-size: 1.2rem;
+    border: 2px solid black;
+  }
+    .addprouct:hover{
+    background-color: rgb(224, 64, 64);
+    border: none;
+    box-shadow: -0.5px -0.5px 5px  rgb(141, 16, 16),2px 2px 5px rgb(94, 8, 8);
+  }
+  input,textarea{
+    padding:0.5rem;
+    border-radius: 0.4rem;
+    margin: 1rem 0rem;
+    width: 60%;
+    display: block;
+  }

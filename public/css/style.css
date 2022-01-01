@@ -1,0 +1,46 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    padding: 0;
+    /* overflow: hidden; */
+}
+.container{
+    display: flex;
+    margin: 0%;
+  flex-direction: row;
+  background-color: rgb(0, 75, 75);
+}
+.login{
+    padding-left: 1229px;
+ }
+ .logout button{
+     background-color: rgb(0, 75, 75);
+    color: white;
+    padding-left: 910px;
+    border: 0;
+ }
+ul{
+    margin: 0;
+    padding: 0; 
+}
+li{
+    list-style: none;
+    padding:1rem;
+}
+li a{
+    text-decoration: none;
+    color: white;
+}
+h1{
+   text-align: center; 
+}
+li a:hover,li button:hover,
+li button.active,
+li a.active{
+    color: rgb(237, 255, 71);
+}
+.center{
+    text-align:center;
+}
